@@ -1,0 +1,58 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+//O chat tá pegando agora?
+//olha chat
+//Testa o Login
+import React, {useEffect, useRef, useState} from 'react';
+import {useRouteMatch, Route, Switch} from 'react-router-dom';
+import BaseApp from '../components/baseApp';
+import gsap, {TweenMax} from 'gsap';
+import Home from '../layouts/home';
+import Admin from '../layouts/admin';
+import CSSPlugin from 'gsap/CSSPlugin';
+
+gsap.registerPlugin(CSSPlugin);
+
+export default function() {
+  const {path} = useRouteMatch();
+  let card = useRef(null);
+  let sideBar = useRef(null);
+  let labelItems = useRef(null);
+
+  const [isExpandedMenu, setIsExpandedMenu] = useState(true);
+
+  useEffect(() => {
+    TweenMax.to(card.current, 2, {
+      x: 50
+    });
+    labelItems.current = sideBar.current.getElementsByClassName('Label');
+  }, []);
+  function hideOrShowMenu() {
+    isExpandedMenu ? retractMenu() : expandMenu();
+  }
+
+  function retractMenu() {
+    setIsExpandedMenu(false);
+    TweenMax.to(labelItems.current, 0.6, {
+      opacity: 0,
+      width: 0
+    });
+  }
+  function expandMenu() {
+    setIsExpandedMenu(true);
+    TweenMax.to(labelItems.current, 0.6, {
+      opacity: 100,
+      width: 100
+    });
+  }
+
+  return (
+    <>
+      <Switch>
+        <BaseApp reference={sideBar} card={card} hideOrShowMenu={hideOrShowMenu}>
+          <Route exact path={`${path}/home`} component={Home} />
+          <Route path={`${path}/admin`} component={Admin} />
+        </BaseApp>
+      </Switch>
+    </>
+  );
+}

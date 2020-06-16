@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {Colors} from '../../../config/styles';
-import * as dashBoard from './dashboard';
+import * as sideBar from './sideBar';
+import * as dashBoard from './baseContainer';
 
 export const Background = styled.div`
   background-color: ${Colors.sideBar};
@@ -15,4 +16,5 @@ export const Background = styled.div`
   }
 `;
 
+export const {...SideBar} = sideBar;
 export const {...Dashboard} = dashBoard;
