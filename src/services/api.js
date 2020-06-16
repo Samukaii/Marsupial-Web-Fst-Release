@@ -1,8 +1,6 @@
 import axios from 'axios';
 require('dotenv/config');
 
-//import {url} from './tunnels/tunnelInfo.json';
-//O chat tá funcionando?ta pegando
 export const Api = axios.create({
   baseURL: 'https://marsupialapi.herokuapp.com'
 });

@@ -7,7 +7,9 @@ export const HideFormButton = props => {
   const Style = styled.button`
     padding: auto;
     margin: auto;
-    display: auto;
+    display: flex;
+    width: 100%;
+    
   `;
   return (
     <Style onClick={props.onClick}>

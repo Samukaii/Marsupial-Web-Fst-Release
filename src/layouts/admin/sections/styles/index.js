@@ -45,7 +45,8 @@ export const SectionTitle = styled.div`
 `;
 
 export const Input = styled.input`
-  padding: auto;
-  margin: auto;
+  padding: 0;
+  margin-bottom: 10px;
   display: auto;
+  width: 300px;
 `;

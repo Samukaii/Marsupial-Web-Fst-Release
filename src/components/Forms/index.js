@@ -12,18 +12,20 @@ export const CollapsibleForm = props => {
 
   function open() {
     TweenMax.to(formReference, 0.3, {
-      scaleY: 1
+      height: 200,
+      scaleY:1
     });
   }
   function close() {
     TweenMax.to(formReference, 0.3, {
-      scaleY: 0
+      height: 0,
+      scaleY:0
     });
   }
 
   return (
     <CollapseForm ref={ref => (formReference = ref)}>
-      <HideFormButton />
+      <HideFormButton onClick={event=>{event.preventDefault();close()}}/>
       {props.children}
     </CollapseForm>
   );

@@ -7,6 +7,7 @@ export const CollapseForm = styled.form`
   margin: auto;
   display: flex;
   flex-direction: column;
-
+  width:100%;
+  height: 0px;
   transform: scaleY(0);
 `;
