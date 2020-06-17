@@ -5,15 +5,21 @@ import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 
 export const HideFormButton = props => {
   const Style = styled.button`
-    padding: auto;
-    margin: auto;
+    padding: 0;
+    margin: 0;
     display: flex;
-    width: 100%;
+    background: #0000;
+    border:0px;
+    cursor: pointer;
+
+    &:hover{
+      color: red;
+    }
     
   `;
   return (
     <Style onClick={props.onClick}>
-      <FontAwesomeIcon icon={faAngleDown} />
+      Fechar<FontAwesomeIcon icon={faAngleDown} style={{marginLeft:4}} />
     </Style>
   );
 };

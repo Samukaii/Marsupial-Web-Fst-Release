@@ -13,13 +13,15 @@ export const CollapsibleForm = props => {
   function open() {
     TweenMax.to(formReference, 0.3, {
       height: 200,
-      scaleY:1
+      scaleY:1,
+      marginTop:10
     });
   }
   function close() {
     TweenMax.to(formReference, 0.3, {
       height: 0,
-      scaleY:0
+      scaleY:0,
+      marginTop:0
     });
   }
 

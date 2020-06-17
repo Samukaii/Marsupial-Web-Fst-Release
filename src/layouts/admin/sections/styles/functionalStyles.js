@@ -1,5 +1,5 @@
-import {faPen, faPlus, faTrash, faAngleDown} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faPen, faPlus, faTrash, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -61,7 +61,26 @@ export const Add = props => {
   return (
     <Style onClick={props.onClick}>
       {props.children}{' '}
-      <FontAwesomeIcon style={{marginLeft: 5}} icon={faPlus} color={props.colorIcon || '#eee'} />
+      <FontAwesomeIcon style={{ marginLeft: 5 }} icon={faPlus} color={props.colorIcon || '#eee'} />
+    </Style>
+  );
+};
+
+export const Select = props => {
+  const Style = styled.select`
+    padding:10px;
+    width: 80%;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    box-sizing: content-box;
+    
+
+  
+  `;
+  return (
+    <Style onChange={props.onchange}>
+      {props.list.map((item, index)=><option id={index}>{item}</option>)}
     </Style>
   );
 };

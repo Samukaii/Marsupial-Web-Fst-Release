@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Add as add, Edit as edit, Delete as del} from './functionalStyles';
+import {Add as add, Edit as edit, Delete as del, Select as select} from './functionalStyles';
 
 export const Add = add;
 export const Edit = edit;
@@ -33,7 +33,7 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   padding: auto;
-  margin: auto;
+  margin: 10px;
   display: auto;
 `;
 
@@ -45,8 +45,10 @@ export const SectionTitle = styled.div`
 `;
 
 export const Input = styled.input`
-  padding: 0;
-  margin-bottom: 10px;
-  display: auto;
-  width: 300px;
+  padding: 10px;
+  width: 80%;
+  margin-top: 10px;
+  border: none;
 `;
+
+export const Select = select;
