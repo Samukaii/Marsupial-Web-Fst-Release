@@ -48,7 +48,12 @@ export const Input = styled.input`
   padding: 10px;
   width: 80%;
   margin-top: 10px;
-  border: none;
+  border: 1px solid #999;
 `;
+
+export const Subject = styled.div`
+  
+`;
+
 
 export const Select = select;

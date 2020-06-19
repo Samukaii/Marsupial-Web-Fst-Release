@@ -8,8 +8,9 @@ export const CollapseForm = styled.form`
   padding-bottom: 10px;
   padding-top: 10px;
   width:100%;
+  background-color:#fff;
+  border: 1px;
   height: 0px;
-  background-color:#2232;
   transform: scaleY(0);
   align-items: center;
 `;

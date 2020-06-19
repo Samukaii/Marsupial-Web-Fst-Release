@@ -41,7 +41,7 @@ export const Delete = props => {
     }
   `;
   return (
-    <Style>
+    <Style onClick={props.onClick}>
       <FontAwesomeIcon icon={faTrash} color={props.color || '#f22'} />
     </Style>
   );
@@ -60,7 +60,7 @@ export const Add = props => {
   `;
   return (
     <Style onClick={props.onClick}>
-      {props.children}{' '}
+      {props.children}
       <FontAwesomeIcon style={{ marginLeft: 5 }} icon={faPlus} color={props.colorIcon || '#eee'} />
     </Style>
   );
@@ -71,7 +71,7 @@ export const Select = props => {
     padding:10px;
     width: 80%;
     margin-top: 10px;
-    border: none;
+    border: 1px solid #999;
     cursor: pointer;
     box-sizing: content-box;
     
@@ -79,7 +79,7 @@ export const Select = props => {
   
   `;
   return (
-    <Style onChange={props.onchange}>
+    <Style onChange={props.onChange}>
       {props.list.map((item, index)=><option id={index}>{item}</option>)}
     </Style>
   );

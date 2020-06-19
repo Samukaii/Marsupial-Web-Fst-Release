@@ -1,0 +1,62 @@
+{
+  "Artes":{
+    "color":"#f05",
+    "icon":"paint-brush"
+  },
+  "Biologia":{
+    "color":"#052",
+    "icon":"tree"
+  },
+  "Educacao Fisica":{
+    "color":"#843",
+    "icon":"football-ball"
+  },
+  "Filosofia":{
+    "color":"#f55",
+    "icon":"brain"
+  },
+  "Fisica":{
+    "color":"#05f",
+    "icon":"atom"
+  },
+  "Geografia":{
+    "color":"#59f",
+    "icon":"globe"
+  },
+  "Historia":{
+    "color":"#f88",
+    "icon":"hourglass-half"
+  },
+  "Lingua Estrangeira":{
+    "color":"#05f",
+    "icon":"language"
+  },
+  "Literatura":{
+    "color":"#999",
+    "icon":"feather"
+  },
+  "Matematica":{
+    "color":"#35f",
+    "icon":"calculator"
+  },
+  "Portugues":{
+    "color":"#fa6",
+    "icon":"book-open"
+  },
+  "Quimica":{
+    "color":"#777",
+    "icon":"microscope"
+  },
+  "Redacao":{
+    "color":"#f70",
+    "icon":"pencil-alt"
+  },
+  "Sociologia":{
+    "color":"#3a5",
+    "icon":"people-arrows"
+  },
+  "Tecnologias da Comunicacao":{
+    "color":"#05f",
+    "icon":"phone"
+  }
+}

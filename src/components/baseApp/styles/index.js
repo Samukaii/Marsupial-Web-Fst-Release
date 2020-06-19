@@ -15,6 +15,10 @@ export const Background = styled.div`
     flex-direction: column;
   }
 `;
+export const Content = styled.div`
+  height:80%;
+  overflow-y: auto;
+`;
 
 export const {...SideBar} = sideBar;
 export const {...Dashboard} = dashBoard;

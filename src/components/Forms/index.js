@@ -7,8 +7,8 @@ export const CollapsibleForm = props => {
   let formReference;
 
   useEffect(() => {
-    props.receive(open, close);
-  }, []);
+    props.receiveOpen(open);
+  }, [props.receiveOpen]);
 
   function open() {
     TweenMax.to(formReference, 0.3, {
@@ -18,6 +18,7 @@ export const CollapsibleForm = props => {
     });
   }
   function close() {
+    props.onClose();
     TweenMax.to(formReference, 0.3, {
       height: 0,
       scaleY:0,
