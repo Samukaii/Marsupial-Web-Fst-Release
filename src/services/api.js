@@ -55,5 +55,3 @@ export const register = async ({ email, name, password }) => {
         console.log(registered);
     }
 };
-
-export default Api;

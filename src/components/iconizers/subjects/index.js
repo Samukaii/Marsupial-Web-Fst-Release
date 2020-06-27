@@ -1,25 +1,24 @@
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-    faPaintBrush,
-    faTree,
-    faFootballBall,
-    faBrain,
     faAtom,
+    faBookOpen,
+    faBrain,
+    faCalculator,
+    faFeather,
+    faFootballBall,
     faGlobe,
     faHourglassHalf,
     faLanguage,
-    faFeather,
-    faCalculator,
-    faBookOpen,
     faMicroscope,
+    faPaintBrush,
     faPencilAlt,
     faPeopleArrows,
-    faPhone
+    faPhone,
+    faTree
 } from "@fortawesome/free-solid-svg-icons";
-
-import { library } from "@fortawesome/fontawesome-svg-core";
-import Icons from "../../../config/icons.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { SubjectIcons } from "../../global/static";
 
 library.add([
     faPaintBrush,
@@ -39,13 +38,13 @@ library.add([
     faPhone
 ]);
 
-export default function SubjectIconizer(props) {
-    if (!Icons[props.subject]) return <span></span>;
+export function SubjectIconizer(props) {
+    if (!SubjectIcons[props.subject]) return <span></span>;
     return (
         <FontAwesomeIcon
             style={{ width: 25, height: 25 }}
-            icon={Icons[props.subject].icon}
-            color={Icons[props.subject].color}
+            icon={SubjectIcons[props.subject].icon}
+            color={SubjectIcons[props.subject].color}
         />
     );
 }

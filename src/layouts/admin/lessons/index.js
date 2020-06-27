@@ -1,21 +1,17 @@
-import React from "react";
-import { Container } from "../welcomeAdmin/styles";
-import { Title, Edit, Input } from "./styles/index";
-import Api from "../../../services/api";
-import { useState } from "react";
-import { useEffect } from "react";
-import { EditableTitle, EditButton } from "./styles";
-import { Colors } from "../../../config/styles";
-import subjects from "../../../config/subjects.json";
-import { EditableSelect } from "./styles/functionalStyles";
+import React, { useState, useEffect } from "react";
+import { Api } from "./services";
+import { EditableTitle, EditableSelect } from "./styles";
+import { Container, Title } from "./styles";
+import { EditButton } from "./styles";
+import { SubjectsList } from "./static";
 
-export default function EditSections({ match }) {
+export default function Lessons({ idSection }) {
     const [section, setSection] = useState({});
     const [isEditing, setIsEditing] = useState(false);
     const [newValues, setNewValues] = useState({});
 
     useEffect(() => {
-        getSection(match.params.id);
+        getSection(idSection);
     }, []);
 
     useEffect(() => {
@@ -32,7 +28,7 @@ export default function EditSections({ match }) {
     }
 
     function editSection() {
-        isEditing && putSection(match.params.id, newValues);
+        isEditing && putSection(idSection, newValues);
         setIsEditing(!isEditing);
     }
 
@@ -54,14 +50,13 @@ export default function EditSections({ match }) {
             <div style={{ display: "flex", width: "80%" }}>
                 <Title
                     style={{
-                        alignSelf: "flex-start",
-                        color: Colors.themedText
+                        alignSelf: "flex-start"
                     }}
                 >
                     Matéria
                 </Title>
                 <EditableSelect
-                    list={subjects}
+                    list={SubjectsList}
                     defaultValue={newValues.subject}
                 />
             </div>

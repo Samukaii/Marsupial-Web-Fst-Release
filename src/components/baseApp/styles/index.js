@@ -1,24 +1,24 @@
-import styled from 'styled-components';
-import {Colors} from '../../../config/styles';
-import * as sideBar from './sideBar';
-import * as dashBoard from './baseContainer';
+import styled from "styled-components";
+import { Colors } from "../../global/colors";
+import { Background as BG } from "../../global/styles";
 
-export const Background = styled.div`
-  background-color: ${Colors.sideBar};
-  height: 100%;
-  width: 100%;
-  display: flex;
-  z-index: -1;
-  overflow-x: hidden;
+export const Background = styled(BG)`
+    background-color: ${Colors.sideBar};
+    width: 100%;
+    justify-content: unset;
+    align-items: unset;
+    z-index: -1;
+    overflow-x: hidden;
 
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `;
+
 export const Content = styled.div`
-  height:80%;
-  overflow-y: auto;
+    height: 80%;
+    overflow-y: auto;
 `;
 
-export const {...SideBar} = sideBar;
-export const {...Dashboard} = dashBoard;
+export * from "./sideBar";
+export * from "./baseContainer";

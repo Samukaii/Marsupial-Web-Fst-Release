@@ -1,3 +1,2 @@
-import {colors} from './colors';
-
-export const {...Colors} = colors;
+export { Colors } from "./colors";
+export * from "./common";

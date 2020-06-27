@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Background, Form, Logo } from "./styles";
-import { Input, ActionButton, Link } from "./styles";
 import { login } from "../services/api";
+import { Input, Logo } from "./styles";
+import { Background, Form, ActionButton, Link } from "./styles";
 
 export default function Login() {
     const [email, setEmail] = useState();

@@ -1,35 +1,40 @@
-import {TweenMax} from 'gsap';
-import React, {useEffect} from 'react';
-import {CollapseForm} from './styles/index';
-import {HideFormButton} from './styles/index';
+import { TweenMax } from "gsap";
+import React, { useEffect } from "react";
+import { CollapseForm } from "./styles/index";
+import { HideFormButton } from "./styles/index";
 
-export const CollapsibleForm = props => {
-  let formReference;
+export const CollapsibleForm = ({ receiveOpen, onClose, children }) => {
+    let formReference;
 
-  useEffect(() => {
-    props.receiveOpen(open);
-  }, [props.receiveOpen]);
+    useEffect(() => {
+        receiveOpen(open);
+    }, []);
 
-  function open() {
-    TweenMax.to(formReference, 0.3, {
-      height: 200,
-      scaleY:1,
-      marginTop:10
-    });
-  }
-  function close() {
-    props.onClose();
-    TweenMax.to(formReference, 0.3, {
-      height: 0,
-      scaleY:0,
-      marginTop:0
-    });
-  }
+    function open() {
+        TweenMax.to(formReference, 0.3, {
+            height: 200,
+            scaleY: 1,
+            marginTop: 10
+        });
+    }
+    function close() {
+        onClose();
+        TweenMax.to(formReference, 0.3, {
+            height: 0,
+            scaleY: 0,
+            marginTop: 0
+        });
+    }
 
-  return (
-    <CollapseForm ref={ref => (formReference = ref)}>
-      <HideFormButton onClick={event=>{event.preventDefault();close()}}/>
-      {props.children}
-    </CollapseForm>
-  );
+    return (
+        <CollapseForm ref={ref => (formReference = ref)}>
+            <HideFormButton
+                onClick={event => {
+                    event.preventDefault();
+                    close();
+                }}
+            />
+            {children}
+        </CollapseForm>
+    );
 };
