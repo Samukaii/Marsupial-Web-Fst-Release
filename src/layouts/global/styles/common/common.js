@@ -4,7 +4,6 @@ import { Colors } from "../../colors";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: ${props => (props.center ? "center" : "left")};
 `;
 
 export const HorizontalContainer = styled(Container)`

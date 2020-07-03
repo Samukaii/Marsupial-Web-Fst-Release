@@ -3,11 +3,13 @@ import { Api } from "./services";
 import { EditableTitle, EditableSelect } from "./styles";
 import { Container, Title } from "./styles";
 import { EditButton } from "./styles";
+import { TitleInfo, SubjectInfo } from "./styles";
 import { SubjectsList } from "./static";
 
 export default function Lessons({ idSection }) {
     const [section, setSection] = useState({});
-    const [isEditing, setIsEditing] = useState(false);
+    const [isEditingTitle, setIsEditingTitle] = useState(false);
+    const [isEditingSubject, setIsEditingSubject] = useState(false);
     const [newValues, setNewValues] = useState({});
 
     useEffect(() => {
@@ -28,8 +30,13 @@ export default function Lessons({ idSection }) {
     }
 
     function editSection() {
-        isEditing && putSection(idSection, newValues);
-        setIsEditing(!isEditing);
+        isEditingTitle && putSection(idSection, newValues);
+        setIsEditingTitle(!isEditingTitle);
+    }
+
+    function editSubject() {
+        isEditingSubject && putSection(idSection, newValues);
+        setIsEditingSubject(!isEditingSubject);
     }
 
     function editNewValues(field, value) {
@@ -37,29 +44,26 @@ export default function Lessons({ idSection }) {
     }
     return (
         <Container>
-            <div style={{ display: "flex" }}>
+            <TitleInfo>
                 <EditableTitle
-                    isEditing={isEditing}
+                    isEditing={isEditingTitle}
                     onChange={value => editNewValues("title", value)}
                 >
                     {newValues.title}
                 </EditableTitle>
                 <EditButton onClick={editSection} />
-            </div>
+            </TitleInfo>
 
-            <div style={{ display: "flex", width: "80%" }}>
-                <Title
-                    style={{
-                        alignSelf: "flex-start"
-                    }}
-                >
-                    Matéria
-                </Title>
+            <SubjectInfo>
+                <Title>Matéria</Title>
                 <EditableSelect
+                    isEditing={isEditingSubject}
                     list={SubjectsList}
                     defaultValue={newValues.subject}
+                    onChange={value => editNewValues("subject", value)}
                 />
-            </div>
+                <EditButton onClick={editSubject} />
+            </SubjectInfo>
         </Container>
     );
 }

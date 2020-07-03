@@ -1,14 +1,14 @@
 import { TweenMax } from "gsap";
 import React, { useEffect } from "react";
-import { CollapseForm } from "./styles/index";
-import { HideFormButton } from "./styles/index";
+import { CollapseForm } from "./styles";
+import { HideFormButton } from "./styles";
 
 export const CollapsibleForm = ({ receiveOpen, onClose, children }) => {
     let formReference;
 
     useEffect(() => {
         receiveOpen(open);
-    }, []);
+    }, [receiveOpen]);
 
     function open() {
         TweenMax.to(formReference, 0.3, {

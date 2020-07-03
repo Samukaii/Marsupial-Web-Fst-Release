@@ -23,9 +23,13 @@ export default function Admin() {
 }
 
 function ValidateLessonRoute({ location }) {
-    const { id_section } = location.state;
+    const { state } = location;
 
-    if (!id_section) return <Redirect to="admin/sections" />;
+    if (!state) return <Redirect to="sections" />;
+
+    const { id_section } = state;
+
+    if (!id_section) return <Redirect to="sections" />;
 
     return <Lessons idSection={id_section} />;
 }

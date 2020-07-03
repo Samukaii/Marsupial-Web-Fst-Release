@@ -12,6 +12,7 @@ export const Background = styled(BG)`
 
     @media (max-width: 600px) {
         flex-direction: column;
+        height: 100%;
     }
 `;
 

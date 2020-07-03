@@ -41,7 +41,7 @@ export default function Sections(props) {
                 <SubjectIconizer subject={value.subject} />
                 <Edit
                     to={{
-                        pathName: "admin/lessons",
+                        pathname: "lessons",
                         state: { id_section: value._id }
                     }}
                 />
@@ -71,7 +71,9 @@ export default function Sections(props) {
             <List>
                 {sections.map(renderSections)}
                 <CollapsibleForm
-                    receiveOpen={open => (openForm = open)}
+                    receiveOpen={open => {
+                        openForm = open;
+                    }}
                     onClose={closeAddSectionForm}
                 >
                     <Title>Adicionar Nova Seção</Title>

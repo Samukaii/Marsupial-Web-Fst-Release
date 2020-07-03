@@ -14,6 +14,7 @@ export const ListElement = styled.li`
     border-bottom-width: 2px;
     list-style: none;
     width: auto;
+    justify-content: center;
 
     &:hover {
         background-color: #0001;

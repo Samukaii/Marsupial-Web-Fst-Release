@@ -45,6 +45,7 @@ export function SubjectIconizer(props) {
             style={{ width: 25, height: 25 }}
             icon={SubjectIcons[props.subject].icon}
             color={SubjectIcons[props.subject].color}
+            className={props.className}
         />
     );
 }

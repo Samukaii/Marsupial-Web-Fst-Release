@@ -26,7 +26,7 @@ export const Add = ({ children, colorIcon, textColor, color, onClick }) => {
     );
 };
 
-export const Delete = ({ color, onClick }) => {
+export const Delete = ({ color, onClick, className }) => {
     const Style = styled.button`
         padding: 7px;
         margin: auto;
@@ -42,13 +42,13 @@ export const Delete = ({ color, onClick }) => {
         }
     `;
     return (
-        <Style onClick={onClick}>
+        <Style onClick={onClick} className={className}>
             <FontAwesomeIcon icon={faTrash} color={color || "#f22"} />
         </Style>
     );
 };
 
-export const EditButton = ({ onClick, color }) => {
+export const EditButton = ({ onClick, color, className }) => {
     const Style = styled.button`
         padding: 7px;
         margin: auto;
@@ -66,13 +66,13 @@ export const EditButton = ({ onClick, color }) => {
         }
     `;
     return (
-        <Style onClick={onClick}>
+        <Style onClick={onClick} className={className}>
             <FontAwesomeIcon icon={faPen} color={color || "#333"} />
         </Style>
     );
 };
 
-export const Edit = ({ color, href }) => {
+export const Edit = ({ color, href, className }) => {
     const Style = styled.a`
         padding: 7px;
         margin: auto;
@@ -90,7 +90,7 @@ export const Edit = ({ color, href }) => {
         }
     `;
     return (
-        <Style href={href}>
+        <Style href={href} className={className}>
             <FontAwesomeIcon icon={faPen} color={color || "#333"} />
         </Style>
     );

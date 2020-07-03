@@ -8,7 +8,7 @@ export const EditableTitle = ({ children, isEditing, onChange }) => {
         display: flex;
 
         font-size: 18pt;
-        border: ${isEditing ? "1px dashed #0003" : "none"};
+        border: ${isEditing ? "1px dashed #0003" : "1px solid transparent"};
         background-color: ${isEditing ? "#fff3" : "transparent"};
 
         text-align: center;
@@ -32,18 +32,29 @@ export const EditableTitle = ({ children, isEditing, onChange }) => {
     );
 };
 
-export const EditableSelect = ({ list, isEditing, onChange, defaultValue }) => {
+export const EditableSelect = ({
+    list,
+    isEditing,
+    onChange,
+    defaultValue,
+    className
+}) => {
     const Style = styled.select`
         padding: 10px;
         width: 80%;
         margin-top: 10px;
-        border: 1px solid ${Colors.borderGray};
+        border: 1px ${isEditing ? "dashed" : "solid"} ${Colors.borderGray};
         cursor: pointer;
         box-sizing: content-box;
+        outline: none;
+        &::selection {
+            background-color: none;
+        }
     `;
 
     return (
         <Style
+            className={className}
             onChange={onChange}
             contentEditable={!isEditing}
             defaultValue={defaultValue}

@@ -4,13 +4,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const EditLink = ({ color, to }) => {
-    const Style = styled.a`
+export const EditLink = ({ color, to, className }) => {
+    const Style = styled(Link)`
         padding: 7px;
-        margin: auto;
+        margin: 10px;
         display: flex;
         justify-content: center;
-        flex-grow: 1;
+        flex-grow: 0;
 
         background-color: transparent;
         border: none;
@@ -22,9 +22,12 @@ export const EditLink = ({ color, to }) => {
         }
     `;
     return (
-        <Style>
-            <FontAwesomeIcon icon={faPen} color={color || "#333"} />
-            <Link to={to} />
+        <Style to={to} className={className}>
+            <FontAwesomeIcon
+                icon={faPen}
+                color={color || "#333"}
+                style={{ width: 20, height: 20 }}
+            />
         </Style>
     );
 };
