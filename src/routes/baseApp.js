@@ -6,6 +6,7 @@ import gsap, { TweenMax } from "gsap";
 import Home from "../layouts/home";
 import Admin from "../layouts/admin";
 import CSSPlugin from "gsap/CSSPlugin";
+import Subjects from "../layouts/subjects";
 
 gsap.registerPlugin(CSSPlugin);
 
@@ -51,6 +52,11 @@ export default function() {
                     hideOrShowMenu={hideOrShowMenu}
                 >
                     <Route exact path={`${path}/home`} component={Home} />
+                    <Route
+                        exact
+                        path={`${path}/materias`}
+                        component={Subjects}
+                    />
                     <Route path={`${path}/admin`} component={Admin} />
                 </BaseApp>
             </Switch>

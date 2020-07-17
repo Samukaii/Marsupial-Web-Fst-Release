@@ -1,11 +1,13 @@
 import styled from "styled-components";
-import { Common } from "../global/styles";
+import { Common, Functional } from "../global/styles";
 
 //Global Exports
 export const { Background } = Common;
 export const { Button: ActionButton } = Common;
 export const { Form } = Common;
 export const { Link } = Common;
+export const { Loading } = Functional;
+export { HiddenMessage } from "../global/components";
 
 //Internal Exports
 export const Logo = styled.h3`

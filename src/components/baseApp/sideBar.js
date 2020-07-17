@@ -5,12 +5,18 @@ import {
     faAtom,
     faCog,
     faChartLine as faChart,
-    faUser
+    faUser,
+    faPowerOff
 } from "@fortawesome/free-solid-svg-icons";
 import { NavMenus, NavMenuItems as Items } from "./styles";
-import { LabelMenuItems as LabelItem, MenuIcon } from "./styles";
+import {
+    LabelMenuItems as LabelItem,
+    MenuIcon,
+    NavMenuItemsButton as ItemsButton
+} from "./styles";
 import { SideBar as Side } from "./styles";
 import { Colors } from "../global/colors";
+import { logout } from "../global/services";
 
 export default function SideBar(props) {
     return (
@@ -38,7 +44,7 @@ export default function SideBar(props) {
                     </MenuIcon>
                     <LabelItem className="Label">Administrador</LabelItem>
                 </Items>
-                <Items className="MenuItem" href="/materias">
+                <Items className="MenuItem" href="/app/materias">
                     <MenuIcon>
                         <FaIcon
                             icon={faAtom}
@@ -49,7 +55,7 @@ export default function SideBar(props) {
                     </MenuIcon>
                     <LabelItem className="Label">Matérias</LabelItem>
                 </Items>
-                <Items className="MenuItem" href="/desempenho">
+                <Items className="MenuItem" href="/app/desempenho">
                     <MenuIcon>
                         <FaIcon
                             icon={faChart}
@@ -60,7 +66,7 @@ export default function SideBar(props) {
                     </MenuIcon>
                     <LabelItem className="Label">Desempenho</LabelItem>
                 </Items>
-                <Items className="MenuItem" href="/configuracoes">
+                <Items className="MenuItem" href="/app/configuracoes">
                     <MenuIcon>
                         <FaIcon
                             icon={faCog}
@@ -71,6 +77,22 @@ export default function SideBar(props) {
                     </MenuIcon>
                     <LabelItem className="Label">Configurações</LabelItem>
                 </Items>
+                <ItemsButton
+                    className="MenuItem"
+                    onClick={() => {
+                        logout();
+                    }}
+                >
+                    <MenuIcon>
+                        <FaIcon
+                            icon={faPowerOff}
+                            color={Colors.background}
+                            size="2x"
+                            style={{ width: 30 }}
+                        />
+                    </MenuIcon>
+                    <LabelItem className="Label">Sair</LabelItem>
+                </ItemsButton>
             </NavMenus>
         </Side>
     );

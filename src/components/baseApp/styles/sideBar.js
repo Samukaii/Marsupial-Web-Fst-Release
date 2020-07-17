@@ -49,6 +49,24 @@ export const NavMenuItems = styled.a`
         background-color: #fff4;
     }
 `;
+export const NavMenuItemsButton = styled.a`
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #0000;
+    cursor: pointer;
+    border-radius: 17px;
+    padding: 6px;
+    outline: none;
+
+    transition: background-color 0.4s ease;
+
+    &:hover {
+        background-color: #fff4;
+    }
+`;
 export const LabelMenuItems = styled.div`
     color: #eee;
     font-size: 10pt;

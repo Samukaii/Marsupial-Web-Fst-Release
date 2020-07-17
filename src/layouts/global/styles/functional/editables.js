@@ -47,6 +47,13 @@ export const EditableSelect = ({
         cursor: pointer;
         box-sizing: content-box;
         outline: none;
+        background-color: #eee;
+        color: black;
+        &:disabled {
+            background-color: #eee;
+            color: black;
+            border: 1px solid ${Colors.borderGray};
+        }
         &::selection {
             background-color: none;
         }
@@ -56,8 +63,10 @@ export const EditableSelect = ({
         <Style
             className={className}
             onChange={onChange}
-            contentEditable={!isEditing}
+            contentEditable={isEditing}
             defaultValue={defaultValue}
+            unselectable="on"
+            disabled={!isEditing}
         >
             {list.map((value, index) => (
                 <option id={index}>{value}</option>
