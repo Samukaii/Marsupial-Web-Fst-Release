@@ -40,3 +40,23 @@ export const Link = styled.a`
     font-size: 11pt;
     text-align: center;
 `;
+
+export const Block = styled.div`
+    width: ${props => props.size | 200}px;
+    height: ${props => props.size | 200}px;
+    background-color: #eee;
+`;
+
+export const BlockButton = styled.button`
+    width: ${props => props.size | 200}px;
+    height: ${props => props.size | 200}px;
+    background-color: #eee;
+`;
+
+export const BlockLink = styled.a`
+    width: ${props => props.size | 200}px;
+    height: ${props => props.size | 200}px;
+    background-color: #eee;
+`;
+
+export const HorizontalLine = styled.hr``;

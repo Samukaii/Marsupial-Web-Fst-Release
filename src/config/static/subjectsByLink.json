@@ -1,0 +1,47 @@
+{
+    "artes": {
+        "title": "Artes"
+    },
+    "biologia": {
+        "title": "Biologia"
+    },
+    "educacao-fisica": {
+        "title": "Educacao Fisica"
+    },
+    "filosofia": {
+        "title": "Filosofia"
+    },
+    "fisica": {
+        "title": "Fisica"
+    },
+    "geografia": {
+        "title": "Geografia"
+    },
+    "historia": {
+        "title": "Historia"
+    },
+    "lingua-estrangeira": {
+        "title": "Historia"
+    },
+    "literatura": {
+        "title": "Literatura"
+    },
+    "matematica": {
+        "title": "Matematica"
+    },
+    "portugues": {
+        "title": "Portugues"
+    },
+    "quimica": {
+        "title": "Quimica"
+    },
+    "redacao": {
+        "title": "Redacao"
+    },
+    "sociologia": {
+        "title": "Sociologia"
+    },
+    "tecnologias-da-comunicao": {
+        "title": "Tecnologias da Comunicacao"
+    }
+}

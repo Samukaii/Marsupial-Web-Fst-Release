@@ -1,35 +1,16 @@
 import React from "react";
-import { Switch, Route, useRouteMatch, Redirect } from "react-router-dom";
-import Sections from "./sections";
-import Lessons from "./lessons";
-import welcomeAdmin from "./admin/index";
+import { Container, Title, Text, Link } from "./styles";
 
 export default function Admin() {
-    const { path } = useRouteMatch();
-    console.log(path);
     return (
-        <>
-            <Switch>
-                <Route exact path={path} component={welcomeAdmin} />
-                <Route exact path={`${path}/sections`} component={Sections} />
-                <Route
-                    exact
-                    path={`${path}/lessons`}
-                    component={ValidateLessonRoute}
-                />
-            </Switch>
-        </>
+        <Container>
+            <Title>Seja bem vindo</Title>
+            <Text>
+                Nessa seção é possível visualizar, adicionar, deletar e
+                atualizar seções, módulos e videoaulas ao nosso banco de dados
+            </Text>
+            <Link href="/app/admin/sections">Ver todas as seções</Link>
+            <Link href="/app/home">Home</Link>
+        </Container>
     );
-}
-
-function ValidateLessonRoute({ location }) {
-    const { state } = location;
-
-    if (!state) return <Redirect to="sections" />;
-
-    const { id_section } = state;
-
-    if (!id_section) return <Redirect to="sections" />;
-
-    return <Lessons idSection={id_section} />;
 }

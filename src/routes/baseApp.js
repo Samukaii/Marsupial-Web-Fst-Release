@@ -4,9 +4,10 @@ import { useRouteMatch, Route, Switch } from "react-router-dom";
 import { BaseApp } from "../components";
 import gsap, { TweenMax } from "gsap";
 import Home from "../layouts/home";
-import Admin from "../layouts/admin";
+import Admin from "./admin";
 import CSSPlugin from "gsap/CSSPlugin";
 import Subjects from "../layouts/subjects";
+import Sections from "../layouts/subjects/sections";
 
 gsap.registerPlugin(CSSPlugin);
 
@@ -52,12 +53,17 @@ export default function() {
                     hideOrShowMenu={hideOrShowMenu}
                 >
                     <Route exact path={`${path}/home`} component={Home} />
+                    <Route path={`${path}/admin`} component={Admin} />
                     <Route
                         exact
                         path={`${path}/materias`}
                         component={Subjects}
                     />
-                    <Route path={`${path}/admin`} component={Admin} />
+                    <Route
+                        exact
+                        path={`${path}/materias/:subjectlink`}
+                        component={Sections}
+                    />
                 </BaseApp>
             </Switch>
         </>

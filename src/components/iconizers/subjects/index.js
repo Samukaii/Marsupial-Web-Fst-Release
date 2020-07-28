@@ -38,14 +38,14 @@ library.add([
     faPhone
 ]);
 
-export function SubjectIconizer(props) {
-    if (!SubjectIcons[props.subject]) return <span></span>;
+export function SubjectIconizer({ subject, className, style }) {
+    if (!SubjectIcons[subject]) return <span></span>;
     return (
         <FontAwesomeIcon
-            style={{ width: 25, height: 25 }}
-            icon={SubjectIcons[props.subject].icon}
-            color={SubjectIcons[props.subject].color}
-            className={props.className}
+            style={style ?? { width: 25, height: 25 }}
+            icon={SubjectIcons[subject].icon}
+            color={SubjectIcons[subject].color}
+            className={className}
         />
     );
 }

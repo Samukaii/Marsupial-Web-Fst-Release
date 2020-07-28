@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Common } from "../../global/styles";
+import { Common } from "../global/styles";
 
 export const { Link } = Common;
 export const { BigTitle: Title, Text } = Common;
