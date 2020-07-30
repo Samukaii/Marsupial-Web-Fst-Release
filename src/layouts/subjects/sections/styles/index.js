@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { SubjectItems } from "./parent";
+import { SubjectItemsLink } from "./parent";
 import { Colors } from "../colors";
+import { Link } from "react-router-dom";
 export { Title, LineTitle, ItemsGroup } from "./parent";
 
 export const SectionItem = styled.div`
@@ -11,4 +12,4 @@ export const SectionItem = styled.div`
     }
 `;
 
-export const LessonItem = styled(SubjectItems)``;
+export const LessonItem = styled(SubjectItemsLink)``;

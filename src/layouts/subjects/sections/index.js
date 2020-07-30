@@ -8,16 +8,17 @@ import {
     LessonItem
 } from "./styles";
 import { Api } from "./services";
+import { Link } from "react-router-dom";
 
 export default function Sections({ match }) {
     const subjectTitle = SubjectsByLink[match.params.subjectlink].title;
+    const url = match.url;
     const [sections, setSections] = useState([]);
     const [lessons, setLessons] = useState([
-        { title: "Alguma Aula" },
-        { title: "Alguma Aula" },
-        { title: "Alguma Aula" },
-        { title: "Alguma Aula" },
-        { title: "Alguma Aula" }
+        { title: "Alguma Aula", link: "algumaaula" },
+        { title: "Alguma Aula", link: "algumaoutraaula" },
+        { title: "Alguma Aula", link: "maisumaaula" },
+        { title: "Alguma Aula", link: "aquioutraaula" }
     ]);
 
     useEffect(() => {
@@ -29,10 +30,15 @@ export default function Sections({ match }) {
         setSections(data.docs);
     }
 
-    function renderLessons(Lesson) {
+    function renderLessons(lesson) {
         return (
-            <LessonItem>
-                <p>{Lesson.title}</p>
+            <LessonItem
+                to={{
+                    pathname: `${url}/${lesson.link}/videos`,
+                    state: { lesson }
+                }}
+            >
+                <p>{lesson.title}</p>
             </LessonItem>
         );
     }

@@ -1,1 +1,1 @@
-export * from "../../../global/colors";
+export * from "../../colors";

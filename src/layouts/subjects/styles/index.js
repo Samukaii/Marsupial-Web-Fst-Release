@@ -1,6 +1,7 @@
 import { Common } from "../../global/styles";
 import styled from "styled-components";
 import { Colors } from "../colors";
+import { Link } from "react-router-dom";
 
 const { BlockLink } = Common;
 const { HorizontalLine } = Common;
@@ -37,6 +38,39 @@ export const SubjectItems = styled(BlockLink)`
         }
     }
 `;
+
+export const SubjectItemsLink = styled(Link)`
+    text-decoration: none;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: ${Colors.themedText};
+    border: 2px solid ${Colors.sideBar};
+    outline: none;
+    transition: background-color 0.2s;
+    transition: color 0.2s;
+    transition: transform 0.2s;
+
+    p {
+        text-align: center;
+        position: relative;
+        top: 25%;
+    }
+
+    &:hover {
+        background-color: ${Colors.sideBar};
+        color: white;
+        transform: scale(1.05);
+
+        svg {
+            color: white;
+        }
+    }
+`;
+
 export const Title = styled(MediumTitle)`
     text-align: center;
 `;

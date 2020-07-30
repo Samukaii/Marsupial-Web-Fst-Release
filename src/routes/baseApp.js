@@ -5,6 +5,7 @@ import { BaseApp } from "../components";
 import gsap, { TweenMax } from "gsap";
 import Home from "../layouts/home";
 import Admin from "./admin";
+import Videos from "../layouts/subjects/sections/videos";
 import CSSPlugin from "gsap/CSSPlugin";
 import Subjects from "../layouts/subjects";
 import Sections from "../layouts/subjects/sections";
@@ -63,6 +64,11 @@ export default function() {
                         exact
                         path={`${path}/materias/:subjectlink`}
                         component={Sections}
+                    />
+                    <Route
+                        exact
+                        path={`${path}/materias/:subjectlink/:lesson/videos`}
+                        component={Videos}
                     />
                 </BaseApp>
             </Switch>
