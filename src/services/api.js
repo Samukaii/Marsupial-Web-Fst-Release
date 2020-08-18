@@ -46,7 +46,10 @@ export function isAuth() {
 
     if (!tokenInfo.token) return false;
 
-    if (isExpiredDate(tokenInfo.expires)) return false;
+    if (isExpiredDate(tokenInfo.expires)) {
+        //deleteToken();
+        return false;
+    }
 
     return tokenInfo.token;
 }

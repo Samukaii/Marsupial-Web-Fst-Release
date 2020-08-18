@@ -1,1 +1,1 @@
-export * from "../../../global/static";
+export * from "../../static";
