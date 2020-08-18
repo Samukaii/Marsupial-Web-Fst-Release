@@ -1,1 +1,1 @@
-export * from "../../global/colors";
+export { Colors } from "../../global/colors";

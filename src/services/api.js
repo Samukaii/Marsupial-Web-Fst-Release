@@ -9,6 +9,11 @@ export const Api = axios.create({
     }
 });
 
+export const reloadApi = () => {
+    Api({ headers: { "x-access-token": isAuth() } })
+}
+
+
 export const login = ({ email, password }) => {
     return new Promise(async (resolve, reject) => {
         const login = await Api.post(
@@ -41,13 +46,12 @@ function deleteToken() {
 
 export function isAuth() {
     const tokenInfo = JSON.parse(localStorage.getItem("authToken"));
-
     if (!tokenInfo) return false;
 
     if (!tokenInfo.token) return false;
 
     if (isExpiredDate(tokenInfo.expires)) {
-        //deleteToken();
+        deleteToken();
         return false;
     }
 
@@ -55,6 +59,7 @@ export function isAuth() {
 }
 
 function isExpiredDate(date) {
+    date = Date.parse(date);
     return date <= new Date();
 }
 
