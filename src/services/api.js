@@ -1,55 +1,77 @@
-import axios from 'axios';
-require('dotenv/config');
+import axios from "axios";
+require("dotenv/config");
 
-//import {url} from './tunnels/tunnelInfo.json';
-//O chat tá funcionando?ta pegando
 export const Api = axios.create({
-  baseURL: 'https://marsupialapi.herokuapp.com'
+    baseURL: "https://marsupialapi.herokuapp.com",
+
+    headers: {
+        "x-access-token": isAuth()
+    }
 });
 
-export const login = async ({email, password}) => {
-  const login = await Api.post('/auth/login', {email, password});
-  if (login.data.error) throw new Error(login.data.error);
-  saveToken(login.data.token);
-};
+export const login = ({ email, password }) => {
+    return new Promise(async (resolve, reject) => {
+        const login = await Api.post(
+            "/auth/login",
+            { email, password },
+            { validateStatus: false }
+        );
+        if (login.data.error)
+            reject({ success: false, error: login.data.error });
 
+        saveToken(login.data.token);
+        resolve();
+    });
+};
 
 function saveToken(token) {
-  const actualDate = new Date();
-  actualDate.setDate(actualDate.getDate() + 1);
+    const actualDate = new Date();
+    actualDate.setDate(actualDate.getDate() + 1);
 
-  const tokenInfo = {
-    token: token,
-    expires: actualDate
-  };
-  localStorage.setItem('authToken', JSON.stringify(tokenInfo));
+    const tokenInfo = {
+        token: token,
+        expires: actualDate
+    };
+    localStorage.setItem("authToken", JSON.stringify(tokenInfo));
 }
-//ele
-//
-export const isAuth = () => {
-  const tokenInfo = JSON.parse(localStorage.getItem('authToken'));
 
-  if (!tokenInfo) return false;
+function deleteToken() {
+    localStorage.removeItem("authToken");
+}
 
-  if (!tokenInfo.token) return false;
+export function isAuth() {
+    const tokenInfo = JSON.parse(localStorage.getItem("authToken"));
 
-  if (isExpiredDate(tokenInfo.expires)) return false;
+    if (!tokenInfo) return false;
 
-  return tokenInfo.token;
-};
+    if (!tokenInfo.token) return false;
+
+    if (isExpiredDate(tokenInfo.expires)) return false;
+
+    return tokenInfo.token;
+}
 
 function isExpiredDate(date) {
-  return date <= new Date();
+    return date <= new Date();
 }
 
-export const register = async ({email, name, password}) => {
-  let registered;
-  try {
-    registered = await Api.post('/auth/register', {email, name, password});
-    login(email, password);
-  } catch (error) {
-    console.log(registered);
-  }
-};
+export const register = ({ email, name, password }) =>
+    new Promise(async (resolve, reject) => {
+        const { data } = await Api.post(
+            "/auth/register",
+            {
+                email,
+                name,
+                password
+            },
+            { validateStatus: false }
+        );
+        if (data.error) reject(new Error(data.error.message));
+        login({ email: email, password: password });
+        resolve();
+    });
 
-export default Api;
+export const logout = () => {
+    deleteToken();
+    window.location.href = "/login";
+};

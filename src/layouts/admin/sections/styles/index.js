@@ -1,51 +1,48 @@
-import styled from 'styled-components';
-import {Add as add, Edit as edit, Delete as del} from './functionalStyles';
+import styled from "styled-components";
+import { Common, Functional } from "../../../global/styles";
+import { EditLink } from "./functional";
 
-export const Add = add;
-export const Edit = edit;
-export const Delete = del;
+//Functional Styles
+export const { Add } = Functional;
+export const { EditButton } = Functional;
+export const { EditableTitle } = Functional;
+export const { EditableSelect } = Functional;
+export const { Select } = Functional;
 
-export const List = styled.ul`
-  padding: 20px;
-  margin: 0px;
-  display: auto;
-  width: 80%;
+const { Delete: DeleteParent } = Functional;
+
+//Normal Global Styles
+export const { List, ListElement } = Common;
+export const { Input } = Common;
+
+const { MediumTitle, SmallTitle } = Common;
+const { Container: ContainerParent } = Common;
+
+//Custom
+
+export const Delete = styled(DeleteParent)`
+    flex-grow: 0 !important;
+    margin: 0 !important;
+    width: 40px !important;
+    height: 40px;
+`;
+export const Edit = styled(EditLink)`
+    flex-grow: 0 !important;
+    margin: 0px !important;
+    width: 20px !important;
+    height: 20px !important;
 `;
 
-export const ListElement = styled.li`
-  display: flex;
-  padding: 5px;
-  border: 0px solid #0005;
-  border-bottom-width: 2px;
-  list-style: none;
-  width: auto;
-
-  &:hover {
-    background-color: #0001;
-  }
+export const Container = styled(ContainerParent)`
+    align-items: center;
+`;
+export const SectionTitle = styled(SmallTitle)`
+    margin: auto;
+    flex-grow: 20;
+`;
+export const Title = styled(MediumTitle)`
+    color: black;
+    margin: auto;
 `;
 
-export const Container = styled.div`
-  padding: auto;
-  margin: auto;
-  display: flex;
-`;
-
-export const Title = styled.h2`
-  padding: auto;
-  margin: auto;
-  display: auto;
-`;
-
-export const SectionTitle = styled.div`
-  padding: auto;
-  margin: auto;
-  display: auto;
-  flex-grow: 20;
-`;
-
-export const Input = styled.input`
-  padding: auto;
-  margin: auto;
-  display: auto;
-`;
+export const Subject = styled.div``;

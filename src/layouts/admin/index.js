@@ -1,17 +1,16 @@
-import React from 'react';
-import {Switch, Route, useRouteMatch} from 'react-router-dom';
-import Sections from './sections/index';
-import welcomeAdmin from './welcomeAdmin/index';
+import React from "react";
+import { Container, Title, Text, Link } from "./styles";
 
 export default function Admin() {
-  const {path} = useRouteMatch();
-  console.log(path);
-  return (
-    <>
-      <Switch>
-        <Route exact path={path} component={welcomeAdmin} />
-        <Route exact path={`${path}/sections`} component={Sections} />
-      </Switch>
-    </>
-  );
+    return (
+        <Container>
+            <Title>Seja bem vindo</Title>
+            <Text>
+                Nessa seção é possível visualizar, adicionar, deletar e
+                atualizar seções, módulos e videoaulas ao nosso banco de dados
+            </Text>
+            <Link href="/app/admin/sections">Ver todas as seções</Link>
+            <Link href="/app/home">Home</Link>
+        </Container>
+    );
 }
