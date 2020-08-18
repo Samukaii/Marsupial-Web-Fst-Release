@@ -5,6 +5,7 @@ import { Container, Title } from "./styles";
 import { EditButton } from "./styles";
 import { TitleInfo, SubjectInfo } from "./styles";
 import { SubjectsList } from "./static";
+import { BreadCrumbItem, BreadCrumb } from "./components";
 
 export default function Lessons({ idSection }) {
     const [section, setSection] = useState({});
@@ -44,6 +45,12 @@ export default function Lessons({ idSection }) {
     }
     return (
         <Container>
+            <BreadCrumb>
+                <BreadCrumbItem item="Área administrativa" link="/app/admin" />
+                <BreadCrumbItem item="Seções" link="/app/admin/sections" />
+                <BreadCrumbItem item={newValues.title} link="#" active="true" />
+            </BreadCrumb>
+
             <TitleInfo>
                 <EditableTitle
                     isEditing={isEditingTitle}

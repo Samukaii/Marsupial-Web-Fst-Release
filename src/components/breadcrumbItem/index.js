@@ -1,9 +1,9 @@
 import React from "react";
 import { BreadcrumbLink } from "./styles";
 
-export function BreadCrumbItem({ item, link }) {
+export function BreadCrumbItem({ item, link, active = false }) {
     return (
-        <BreadcrumbLink active={true} href={link}>
+        <BreadcrumbLink active={active} href={link}>
             {item}
         </BreadcrumbLink>
     );

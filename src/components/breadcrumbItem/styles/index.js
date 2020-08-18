@@ -5,8 +5,11 @@ export const BreadcrumbLink = styled.a`
     text-decoration: none;
     color: ${props => (props.active ? "#555" : Colors.sideBar)};
     font-size: 12pt;
+    cursor:default;
 
     &:hover {
-        color: #c33;
+        color: ${props => (props.active ? "#555" : "#c33")};
+        cursor: ${props => (props.active ? "default" : "pointer")};
+        
     }
 `;

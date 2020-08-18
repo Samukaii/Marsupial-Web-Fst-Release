@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SubjectsByLink } from "./static";
+import { BreadCrumb, BreadCrumbItem } from './components';
 import {
     Title,
     LineTitle,
@@ -56,6 +57,13 @@ export default function Sections({ match }) {
 
     return (
         <div>
+            <div style={{ display: "flex", justifyContent: "center" }} >
+                <BreadCrumb>
+                    <BreadCrumbItem item="Matérias" link="/app/materias" />
+                    <BreadCrumbItem item={subjectTitle} link="#" active="true" />
+                </BreadCrumb>
+            </div>
+
             <Title>{subjectTitle}</Title>
             <LineTitle></LineTitle>
             {sections.map(renderSections)}

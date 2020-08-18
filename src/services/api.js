@@ -9,9 +9,6 @@ export const Api = axios.create({
     }
 });
 
-export const reloadApi = () => {
-    Api({ headers: { "x-access-token": isAuth() } })
-}
 
 
 export const login = ({ email, password }) => {

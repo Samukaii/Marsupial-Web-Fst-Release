@@ -6,11 +6,8 @@ export default function Admin() {
     return (
         <Container>
             <BreadCrumb>
-                <BreadCrumbItem item="Admin" link="/app/admin"></BreadCrumbItem>
-                <BreadCrumbItem
-                    item="Sections"
-                    link="/app/admin/sections"
-                ></BreadCrumbItem>
+                <BreadCrumbItem item="Área administrativa" link="#" active="true" />
+                <BreadCrumbItem item="Seções" link="/app/admin/sections" />
             </BreadCrumb>
             <Title>Seja bem vindo</Title>
             <Text>
