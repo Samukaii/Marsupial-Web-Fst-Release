@@ -7,7 +7,7 @@ export default function Videos({ location }) {
     return (
         <Base>
             <Title>{lesson.title}</Title>
-            <VideoComponent></VideoComponent>
+            <VideoComponent src="https://www.youtube.com/watch?v=GNu3Tciucr0"></VideoComponent>
             <ListVideos>
                 <VideoItem>Algum Video</VideoItem>
                 <VideoItem>Outro Video</VideoItem>

@@ -24,24 +24,34 @@ export default function Sections({ match }) {
 
     useEffect(() => {
         getSections();
+        getLessons();
     }, []);
 
     async function getSections() {
         const { data } = await Api.get("admin/sections");
         setSections(data.docs);
     }
+    async function getLessons() {
+        const { data } = await Api.get("admin/lessons");
+        setLessons(data.docs);
+    }
 
     function renderLessons(lesson) {
         return (
             <LessonItem
                 to={{
-                    pathname: `${url}/${lesson.link}/videos`,
+                    pathname: `${url}/${getLinkLesson(lesson.title)}/videos`,
                     state: { lesson }
                 }}
             >
                 <p>{lesson.title}</p>
             </LessonItem>
         );
+    }
+
+    function getLinkLesson(lessonTitle = "") {
+        lessonTitle = lessonTitle.toLowerCase();
+        return lessonTitle.replace(" ", "");
     }
 
     function renderSections(section) {

@@ -42,6 +42,7 @@ function deleteToken() {
 }
 
 export function isAuth() {
+
     const tokenInfo = JSON.parse(localStorage.getItem("authToken"));
     if (!tokenInfo) return false;
 

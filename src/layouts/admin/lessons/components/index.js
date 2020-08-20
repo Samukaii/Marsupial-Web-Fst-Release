@@ -1,1 +1,1 @@
-export { BreadCrumb, BreadCrumbItem } from '../../components';
+export { BreadCrumb, BreadCrumbItem, CollapsibleForm } from '../../components';
