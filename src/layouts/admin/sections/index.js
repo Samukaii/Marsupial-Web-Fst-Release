@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SubjectsList } from "./static";
-import { SubjectIconizer, CollapsibleForm } from "./components";
+import { SubjectIconizer, CollapsibleForm, BreadCrumb, BreadCrumbItem } from "./components";
 import { Api } from "./services";
 import { Container } from "./styles";
 import { Add, Delete, Edit } from "./styles";
@@ -67,6 +67,10 @@ export default function Sections(props) {
 
     return (
         <Container>
+            <BreadCrumb>
+                <BreadCrumbItem item="Área administrativa" link="/app/admin" />
+                <BreadCrumbItem item="Seções" link="#" active="true" />
+            </BreadCrumb>
             <Title>Seções</Title>
             <List>
                 {sections.map(renderSections)}

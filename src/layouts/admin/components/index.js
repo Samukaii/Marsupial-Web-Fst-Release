@@ -1,1 +1,1 @@
-export { BreadCrumb, BreadCrumbItem } from "../../global/components";
+export * from "../../global/components";

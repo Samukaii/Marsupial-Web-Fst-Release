@@ -1,6 +1,6 @@
 import { Common } from "../../../../global/styles";
 import styled from "styled-components";
-import { Colors } from "../Colors";
+import { Colors } from "../colors";
 
 export const { MediumTitle: Title } = Common;
 

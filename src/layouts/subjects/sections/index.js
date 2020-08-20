@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SubjectsByLink } from "./static";
+import { BreadCrumb, BreadCrumbItem } from './components';
 import {
     Title,
     LineTitle,
@@ -23,24 +24,34 @@ export default function Sections({ match }) {
 
     useEffect(() => {
         getSections();
+        getLessons();
     }, []);
 
     async function getSections() {
         const { data } = await Api.get("admin/sections");
         setSections(data.docs);
     }
+    async function getLessons() {
+        const { data } = await Api.get("admin/lessons");
+        setLessons(data.docs);
+    }
 
     function renderLessons(lesson) {
         return (
             <LessonItem
                 to={{
-                    pathname: `${url}/${lesson.link}/videos`,
+                    pathname: `${url}/${getLinkLesson(lesson.title)}/videos`,
                     state: { lesson }
                 }}
             >
                 <p>{lesson.title}</p>
             </LessonItem>
         );
+    }
+
+    function getLinkLesson(lessonTitle = "") {
+        lessonTitle = lessonTitle.toLowerCase();
+        return lessonTitle.replace(" ", "");
     }
 
     function renderSections(section) {
@@ -56,6 +67,13 @@ export default function Sections({ match }) {
 
     return (
         <div>
+            <div style={{ display: "flex", justifyContent: "center" }} >
+                <BreadCrumb>
+                    <BreadCrumbItem item="Matérias" link="/app/materias" />
+                    <BreadCrumbItem item={subjectTitle} link="#" active="true" />
+                </BreadCrumb>
+            </div>
+
             <Title>{subjectTitle}</Title>
             <LineTitle></LineTitle>
             {sections.map(renderSections)}
