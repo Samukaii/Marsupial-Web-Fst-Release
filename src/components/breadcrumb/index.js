@@ -4,8 +4,8 @@ import { Base } from "./styles";
 export function BreadCrumb({ children }) {
     return (
         <Base>
-            {children.map(item => (
-                <>{item}/</>
+            {children.map((item) => (
+                <>{item}/ </>
             ))}
         </Base>
     );
