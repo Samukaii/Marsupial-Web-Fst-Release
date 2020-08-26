@@ -52,7 +52,7 @@ export default function Videos({ idLesson }) {
     }
 
     async function getAllVideos() {
-        const { data } = await Api.get("admin/videos");
+        const { data } = await Api.get(`admin/videos?lesson=${idLesson}`);
         setVideos(data.docs);
     }
 

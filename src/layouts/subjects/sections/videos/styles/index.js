@@ -29,9 +29,14 @@ export const ListVideos = styled.ul`
     flex-grow: 0.2;
 `;
 
-export const VideoItem = styled.a`
+export const VideoItem = styled.button`
     text-decoration: none;
+    background-color: transparent;
+    border: none;
+    text-align: left;
     margin: 0;
+    font-size: 12pt;
+    outline: none;
     border-bottom: 1px solid ${Colors.sideBar};
     padding: 5px;
     color: ${Colors.sideBar};

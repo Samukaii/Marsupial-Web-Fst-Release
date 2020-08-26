@@ -24,6 +24,18 @@ export default function Videos({ location }) {
         setCurrentVideo(videos[index]);
     }
 
+    function renderVideos(video) {
+        return (
+            <VideoItem
+                onClick={() => {
+                    chooseCurrentVideo(videos.indexOf(video));
+                }}
+            >
+                {video.title}
+            </VideoItem>
+        );
+    }
+
     return (
         <Base>
             <Title>{lesson.title}</Title>
@@ -32,13 +44,7 @@ export default function Videos({ location }) {
                 <VideoComponent
                     source={currentVideo.linkVideo ?? ""}
                 ></VideoComponent>
-                <ListVideos>
-                    <VideoItem>Algum Samuka</VideoItem>
-                    <VideoItem>Outro Video</VideoItem>
-                    <VideoItem>Assista mais esse vídeo</VideoItem>
-                    <VideoItem>Olha um video Aqui</VideoItem>
-                    <VideoItem>Já chega de Video</VideoItem>
-                </ListVideos>
+                <ListVideos>{videos.map(renderVideos)}</ListVideos>
             </BaseVideos>
         </Base>
     );
