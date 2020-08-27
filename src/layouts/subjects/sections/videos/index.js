@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Title, Base, ListVideos, VideoItem, BaseVideos } from "./styles";
+import {
+    Title,
+    Base,
+    ListVideos,
+    VideoItem,
+    BaseVideos,
+    HorizontalLine,
+    SmallTitle,
+} from "./styles";
 import { VideoComponent } from "./components";
 import { Api } from "../services";
 
@@ -46,6 +54,8 @@ export default function Videos({ location }) {
                 ></VideoComponent>
                 <ListVideos>{videos.map(renderVideos)}</ListVideos>
             </BaseVideos>
+            <HorizontalLine />
+<SmallTitle>{currentVideo.title} - Canal {currentVideo.youtubeChannel}</SmallTitle>
         </Base>
     );
 }

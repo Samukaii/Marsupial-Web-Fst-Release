@@ -11,10 +11,10 @@ export const CollapsibleForm = ({ receiveOpen, onClose, children }) => {
     }, [receiveOpen]);
 
     function open() {
-        TweenMax.to(formReference, 0.3, {
-            height: 200,
+        TweenMax.to(formReference, 0.4, {
+            height: "auto",
             scaleY: 1,
-            marginTop: 10
+            marginTop: 10,
         });
     }
     function close() {
@@ -22,14 +22,14 @@ export const CollapsibleForm = ({ receiveOpen, onClose, children }) => {
         TweenMax.to(formReference, 0.3, {
             height: 0,
             scaleY: 0,
-            marginTop: 0
+            marginTop: 0,
         });
     }
 
     return (
-        <CollapseForm ref={ref => (formReference = ref)}>
+        <CollapseForm ref={(ref) => (formReference = ref)}>
             <HideFormButton
-                onClick={event => {
+                onClick={(event) => {
                     event.preventDefault();
                     close();
                 }}

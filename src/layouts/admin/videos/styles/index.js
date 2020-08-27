@@ -13,6 +13,10 @@ export const { Input } = Common;
 export const { List, ListElement } = Common;
 export const { SmallTitle, MediumTitle } = Common;
 
+export const InputDescription = styled(Input)`
+    height: 90px;
+`;
+
 export const EditableSelect = styled(EditableParent)`
     margin-top: 0 !important;
     margin-right: 20px;

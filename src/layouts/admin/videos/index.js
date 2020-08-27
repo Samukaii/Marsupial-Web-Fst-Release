@@ -10,6 +10,7 @@ import {
     Delete,
     Input,
     Add,
+    InputDescription,
 } from "./styles";
 import { Container, Title } from "./styles";
 import { EditButton } from "./styles";
@@ -27,7 +28,7 @@ export default function Videos({ idLesson }) {
     const [newValues, setNewValues] = useState({});
     const [sectionsNames, setSectionsNames] = useState([]);
 
-    let videoName, videoLink;
+    let videoName, videoLink, videoDescription, youtubeChannel;
     let openForm,
         isOpennedForm = false;
 
@@ -61,6 +62,8 @@ export default function Videos({ idLesson }) {
             title: videoName,
             lesson: idLesson,
             linkVideo: videoLink,
+            youtubeChannel: youtubeChannel,
+            description: videoDescription,
         });
         getAllVideos();
     }
@@ -163,15 +166,27 @@ export default function Videos({ idLesson }) {
                 >
                     <Title>Adicionar Novo Video</Title>
                     <Input
-                        placeholder="Título do Vídeo"
+                        placeholder="Título do Vídeo (Obrigatório)"
                         onChange={(event) => {
                             videoName = event.target.value;
                         }}
                     />
                     <Input
-                        placeholder="Link do Vídeo"
+                        placeholder="Link do Vídeo (Obrigatório)"
                         onChange={(event) => {
                             videoLink = event.target.value;
+                        }}
+                    />
+                    <Input
+                        placeholder="Canal do Youtube (Obrigatório)"
+                        onChange={(event) => {
+                            youtubeChannel = event.target.value;
+                        }}
+                    />
+                    <InputDescription
+                        placeholder="Descrição (Opcional)"
+                        onChange={(event) => {
+                            videoDescription = event.target.value;
                         }}
                     />
                 </CollapsibleForm>

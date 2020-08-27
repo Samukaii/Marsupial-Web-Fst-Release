@@ -2,7 +2,20 @@ import { Common } from "../../../../global/styles";
 import styled from "styled-components";
 import { Colors } from "../colors";
 
-export const { MediumTitle: Title } = Common;
+export const { MediumTitle: Title} = Common;
+const { HorizontalLine: HorizontalLineParent, SmallTitle: SmallTitleParent  } = Common;
+
+export const SmallTitle = styled(SmallTitleParent)`
+    color: ${Colors.themedText};
+`;
+
+export const HorizontalLine = styled(HorizontalLineParent)`
+    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 1px solid ${Colors.themedText};
+    width: 80%;
+`;
 
 export const BaseVideos = styled.div`
     display: flex;

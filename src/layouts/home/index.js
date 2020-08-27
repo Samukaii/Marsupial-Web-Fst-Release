@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <Container>
             <VerticalContainer>
-                <Title>Seja bem vindo, Coala</Title>
+                <Title>Seja bem vindo, Amigo Canguru</Title>
                 <Text>
                     O projeto Marsupial é uma plataforma Web pensada para você
                     que sempre que vai estudar para o Enem, se depara com

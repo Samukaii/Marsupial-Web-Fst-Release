@@ -18,7 +18,6 @@ export const Text = styled(TextParent)`
 export const Link = styled(LinkParent)`
     font-size: 15pt;
     margin: 0;
-    transform: scale(1);
 
     &:hover {
         color: red;
