@@ -1,0 +1,17 @@
+{
+  "material-icon-theme.folders.color": "#56e",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "*lock*": true,
+    "node_modules": true,
+    ".gitpod*": true,
+    ".theia": true
+  },
+  "prettier.tabWidth": 4
+}

@@ -28,7 +28,7 @@ export default function Lessons({ idSection }) {
     }, [section]);
 
     async function getAllLessons() {
-        const { data } = await Api.get("admin/lessons");
+        const { data } = await Api.get(`admin/lessons?section=${idSection}`);
         setLessons(data.docs);
         console.log(data.docs);
     }
