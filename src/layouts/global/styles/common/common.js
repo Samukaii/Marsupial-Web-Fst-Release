@@ -6,6 +6,8 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 
+export const VerticalContainer = styled(Container)``;
+
 export const HorizontalContainer = styled(Container)`
     flex-direction: row;
 `;
@@ -19,8 +21,8 @@ export const Background = styled.div`
 `;
 
 export const Button = styled.button`
-    background-color: ${props => props.buttonColor || Colors.button};
-    color: ${props => props.color || Colors.lightText};
+    background-color: ${(props) => props.buttonColor || Colors.button};
+    color: ${(props) => props.color || Colors.lightText};
 
     margin-top: 10px;
     padding: 10px;
@@ -35,27 +37,27 @@ export const Button = styled.button`
 
 export const Link = styled.a`
     text-decoration: none;
-    color: ${props => props.color || Colors.themedText};
+    color: ${(props) => props.color || Colors.themedText};
     margin: 10px;
     font-size: 11pt;
     text-align: center;
 `;
 
 export const Block = styled.div`
-    width: ${props => props.size | 200}px;
-    height: ${props => props.size | 200}px;
+    width: ${(props) => props.size | 200}px;
+    height: ${(props) => props.size | 200}px;
     background-color: #eee;
 `;
 
 export const BlockButton = styled.button`
-    width: ${props => props.size | 200}px;
-    height: ${props => props.size | 200}px;
+    width: ${(props) => props.size | 200}px;
+    height: ${(props) => props.size | 200}px;
     background-color: #eee;
 `;
 
 export const BlockLink = styled.a`
-    width: ${props => props.size | 200}px;
-    height: ${props => props.size | 200}px;
+    width: ${(props) => props.size | 200}px;
+    height: ${(props) => props.size | 200}px;
     background-color: #eee;
 `;
 

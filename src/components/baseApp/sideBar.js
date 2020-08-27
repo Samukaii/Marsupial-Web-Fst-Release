@@ -3,16 +3,14 @@ import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import {
     faHome,
     faAtom,
-    faCog,
-    faChartLine as faChart,
     faUser,
-    faPowerOff
+    faPowerOff,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavMenus, NavMenuItems as Items } from "./styles";
 import {
     LabelMenuItems as LabelItem,
     MenuIcon,
-    NavMenuItemsButton as ItemsButton
+    NavMenuItemsButton as ItemsButton,
 } from "./styles";
 import { SideBar as Side } from "./styles";
 import { Colors } from "../global/colors";
@@ -54,28 +52,6 @@ export default function SideBar(props) {
                         />
                     </MenuIcon>
                     <LabelItem className="Label">Matérias</LabelItem>
-                </Items>
-                <Items className="MenuItem" href="/app/desempenho">
-                    <MenuIcon>
-                        <FaIcon
-                            icon={faChart}
-                            color={Colors.background}
-                            size="2x"
-                            style={{ width: 30 }}
-                        />
-                    </MenuIcon>
-                    <LabelItem className="Label">Desempenho</LabelItem>
-                </Items>
-                <Items className="MenuItem" href="/app/configuracoes">
-                    <MenuIcon>
-                        <FaIcon
-                            icon={faCog}
-                            color={Colors.background}
-                            size="2x"
-                            style={{ width: 30 }}
-                        />
-                    </MenuIcon>
-                    <LabelItem className="Label">Configurações</LabelItem>
                 </Items>
                 <ItemsButton
                     className="MenuItem"

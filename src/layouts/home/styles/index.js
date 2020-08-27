@@ -2,6 +2,37 @@ import styled from "styled-components";
 import { Colors } from "../../global/colors";
 import { Common } from "../../global/styles";
 
+const { BigTitle } = Common;
+const { HorizontalContainer, Link: LinkParent } = Common;
+export const { VerticalContainer } = Common;
+const { Text: TextParent } = Common;
+
+export const Text = styled(TextParent)`
+    padding: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    font-size: 15pt;
+`;
+
+export const Link = styled(LinkParent)`
+    font-size: 15pt;
+    margin: 0;
+    transform: scale(1);
+
+    &:hover {
+        color: red;
+    }
+`;
+
+export const Title = styled(BigTitle)`
+    text-align: center;
+`;
+
+export const Container = styled(HorizontalContainer)`
+    justify-content: center;
+`;
+
 export const Background = styled.div`
     background-color: ${Colors.sideBar};
     height: 100%;
@@ -28,56 +59,4 @@ export const Dashboard = styled.div`
         border-radius: 25px 25px 0px 0px;
         box-shadow: 0px -10px 20px #1113;
     }
-`;
-
-export const SearchButton = styled(Button)`
-    background-color: ${Colors.search};
-
-    padding: 5px;
-    border-radius: 20px;
-
-    &:hover {
-        background-color: #36f5;
-    }
-`;
-
-export const SearchBar = styled.form`
-    box-shadow: 0px 5px 20px #1114;
-    border-radius: 25px;
-    background-color: ${Colors.search};
-    width: 260px;
-    padding: 8px;
-    margin-left: 10px;
-    margin-top: 5px;
-    display: flex;
-`;
-
-export const InputSearch = styled.input`
-    border-radius: 25px;
-    width: 100%;
-    border: none;
-    background-color: ${Colors.search};
-    outline: none;
-`;
-
-export const ContentCard = styled.div`
-    margin-top: 40px;
-    align-items: center;
-    float: left;
-    display: flex;
-    justify-content: center;
-
-    @media (max-width: 600px) {
-        flex-direction: column;
-    }
-`;
-
-export const CardItem = styled.div`
-    margin: 20px;
-    width: 300px;
-    height: 150px;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 20px;
-    z-index: 1;
 `;
